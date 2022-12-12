@@ -39,6 +39,16 @@
             <div class="button">
                 <button class="btn" type="submit" id="add-btn" onclick="location.href = 'addData.html'">Add Data</button>
             </div>
+            <form action="" name="delete-data-form" id="form" onsubmit="return deleteData()">
+            <div class="select card">
+                    <label for="select-data" id="select-label">Select a Number(Example: 1)</label>
+                    <input type="number" id="select-data" name="select" min="1">
+                </div>
+                <div id="error"></div>
+                <div class="button">
+                    <button class="btn" type="submit" id="delete-btn">Delete Data</button>
+                </div>
+            </form>
         </div>
     </div>
 </body>

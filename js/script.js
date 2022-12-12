@@ -1,5 +1,6 @@
 // tabledata
 
+// saya coba tanpa menggunakkan framework, karena saya jauh lebih sering diajarkan tanpa framework tapi tentunya kalo saya diberikan waktu lebih saya ingin belajar framework yang tentunya akan sangat membantu seperti react js/bootstrap.
 let data = [
   {
     id: 1372,
@@ -151,7 +152,7 @@ let status = [
 if (localStorage.getItem("data") == null) {
   localStorage.setItem("data", JSON.stringify(data));
 } else {
-  salesData = JSON.parse(localStorage.getItem("data")) || [];
+  data = JSON.parse(localStorage.getItem("data")) || [];
   localStorage.setItem("data", JSON.stringify(data));
 }
 
@@ -210,47 +211,112 @@ function sortTable(table, column, asc = true) {
 }
 
 // click sort
-document.querySelectorAll(".table-sortable th").forEach(headerCell => {
-    headerCell.addEventListener("click", () => {
-        const tableElement = headerCell.parentElement.parentElement.parentElement;
-        const headerIndex = Array.prototype.indexOf.call(headerCell.parentElement.children, headerCell);
-        const currentIsAscending = headerCell.classList.contains("th-sort-asc");
+document.querySelectorAll(".table-sortable th").forEach((headerCell) => {
+  headerCell.addEventListener("click", () => {
+    const tableElement = headerCell.parentElement.parentElement.parentElement;
+    const headerIndex = Array.prototype.indexOf.call(
+      headerCell.parentElement.children,
+      headerCell
+    );
+    const currentIsAscending = headerCell.classList.contains("th-sort-asc");
 
-        sortTable(tableElement, headerIndex, !currentIsAscending);
-    })
-})
+    sortTable(tableElement, headerIndex, !currentIsAscending);
+  });
+});
 
 // add Data
 
-// function itemUpdate() {
-//     if($("#form-id").val() != null && $("#form-id").val() != '') {
-//         // add item
-//         itemAddToTable();
-
-//         formClear();
-
-//         $("#form-id").focus();
-//     }
-// }
-
-// function itemAddToTable() {
-//     if($("#table-data tbody").length == 0) {
-//         $("#table-data").append("<tbody></tbody>");
-//     }
-
-//     $("#table-data tbody").append("<tr>" +
-//     "<td>" + $("#form-id").val() + "</td>" + 
-//     "<td>" + $("#form-product-id").val() + "</td>" + 
-//     "<td>" + $("#form-product-name").val() + "</td>" + 
-//     "<td>" + $("#form-amount").val() + "</td>" + 
-//     "<td>" + $("#form-customer-name").val() + "</td>" + 
-//     "<td>" + $("#form-status").val() + "</td>" + 
-//     "<td>" + $("#form-transaction-date").val() + "</td>" + 
-//     "<td>" + $("#form-create-by").val() + "</td>" + 
-//     "<td>" + $("#form-create-on").val() + "</td>" + "</tr>"
-//     );
-// }
-
 function addData() {
-    const form = document.forms["add-data-form"];
+  const form = document.forms["add-data-form"];
+  const idText = form["id"].value;
+  const productIdText = form["product-id"].value;
+  const productNameText = form["product-name"].value;
+  const amountText = form["amount"].value;
+  const customerText = form["customer-name"].value;
+  const statusText = form["status"].value;
+  const transactionDateText = form["transaction-date"].value;
+  // format tanggal
+  const createByText = form["create-by"].value;
+  const createOnText = form["create-on"].value;
+
+  // error
+
+  let message = "";
+
+  if (
+    !idText ||
+    !productIdText ||
+    !productNameText ||
+    !amountText ||
+    !customerText ||
+    !statusText ||
+    !transactionDateText ||
+    !createByText ||
+    !createOnText
+  ) {
+    message = "All field must be filled!";
+  }
+
+  if (message) {
+    document.getElementById("error").innerHTML = message;
+    return false;
+  } else {
+    let formData = JSON.parse(localStorage.getItem("data")) || [];
+    const newData = {
+      id: idText,
+      productID: productIdText,
+      productName: productNameText,
+      amount: amountText,
+      customerName: customerText,
+      status: statusText,
+      transactionDate: transactionDateText,
+      createBy: createByText,
+      createOn: createOnText,
+    };
+    data.push(newData);
+    localStorage.setItem("data", JSON.stringify(data));
+    alert("Data Successfully Added");
+    return true;
+  }
 }
+// delete data
+
+let formData = JSON.parse(localStorage.getItem("data")) || [];
+
+console.log(JSON.parse(localStorage.getItem("data")));
+
+document.getElementById("select-label").innerHTML = "Delete Data [1 - " + data.length + "] (from the top)";
+
+function deleteData() {
+  const form = document.forms["delete-data-form"];
+  const selection = form["select"].value;
+
+  let message = "";
+
+  if (!selection) {
+    message = "please choose number from data to be deleted!";
+  }
+
+  if (message) {
+    document.getElementById("error").innerHTML = message;
+    return false;
+  } else {
+    // delete
+    message = `
+    Are you sure? \n`
+
+    if (confirm(message) == true) {
+      data.splice(selection - 1, 1);
+      localStorage.setItem("data", JSON.stringify(data));
+      alert("Data Successfully Deleted!");
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
+
+/* saya belum bisa ketemu update tanpa menggunakkan framework, 
+jadi mungkin bisa update dengan delete data lalu menambahkan ulang data tersebut,
+saya juga belum bisa menemukan cara view detail data tanpa framework
+*/

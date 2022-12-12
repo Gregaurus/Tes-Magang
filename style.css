@@ -94,6 +94,13 @@ tr:hover td,th{
 
 .btn:hover {
     cursor: pointer;
+    background-color: var(--bluePurple);
+}
+
+.btn {
+    background-color: var(--blueBell);
+    padding: 5px;
+    border-radius: 20px;
 }
 
 /* form */
@@ -107,4 +114,9 @@ tr:hover td,th{
     min-width: 200px;
     width: 30%;
     flex-direction: column;
+}
+
+.selected {
+    background-color: brown;
+    color: #FFF;
 }
