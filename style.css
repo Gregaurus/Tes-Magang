@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 1vmin;
+}
+
+/* color palette */
+:root
+{
+    --black: #000807;
+    --manatee: #A2A3BB;
+    --blueBell: #9395D3;
+    --bluePurple: #B3B7EE;
+    --red: #DB2955;
+}
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.top-content {
+    align-items: center;
+    text-align: center;
+}
+
+/* table */
+
+table {
+    margin: auto;
+    width: 50%;
+    border-collapse: collapse;
+    border-color: black;
+    border: 1px;
+}
+
+td, th {
+    border: 1px solid var(--black);
+    padding: 10px;
+    background: white;
+}
+
+td {
+    color: var(--black);
+}
+
+tr:hover td,th{
+    background: var(--blueBell);
+}
+
+.table-sortable th {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    cursor: pointer;
+}
+
+.table-sortable .th-sort-asc::after {
+    content: "\25b4";
+}
+
+.table-sortable .th-sort-desc::after {
+    content: "\25be";
+}
+
+.table-sortable .th-sort-asc::after,
+.table-sortable .th-sort-desc::after {
+    margin-left: 5px;
+}
+
+.table-sortable .th-sort-asc,
+.table-sortable .th-sort-desc {
+    background: rgba(0, 0, 0, 0.08);
+}
+
+/* button */
+
+.button {
+    margin : 2vh 0;
+}

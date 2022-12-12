@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="content">
+            <!-- title -->
+            <div class="top-content">
+                <h1>Data Table</h1>
+            </div>
+
+            <!-- table -->
+            <table class="table table-sortable" id="table-data">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>productID</th>
+                        <th>productName</th>
+                        <th>amount</th>
+                        <th>customerName</th>
+                        <th>status</th>
+                        <th>transactionDate</th>
+                        <th>createBy</th>
+                        <th>createOn</th>
+                    </tr>
+                </thead>
+                <tbody id="tableData"></tbody>
+            </table>
+            <div class="button">
+                <button class="btn" type="submit" id="add-btn">Add Data</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
