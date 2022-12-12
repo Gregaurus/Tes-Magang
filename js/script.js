@@ -316,6 +316,15 @@ function deleteData() {
   }
 }
 
+// min max
+
+$(document).ready(function () {
+  $("#select-data").attr({
+    "max" : data.length,
+    "min" : 1,
+  });
+});
+
 /* saya belum bisa ketemu update tanpa menggunakkan framework, 
 jadi mungkin bisa update dengan delete data lalu menambahkan ulang data tersebut,
 saya juga belum bisa menemukan cara view detail data tanpa framework

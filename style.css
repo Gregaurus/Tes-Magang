@@ -2,7 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: rgb(212, 235, 229);
 }
 
 /* color palette */
@@ -17,8 +18,6 @@
 
 .body {
     min-height: 100vh;
-    overflow-x: hidden;
-    background: var(--bluePurple);
 }
 
 .wrapper {
@@ -103,6 +102,15 @@ tr:hover td,th{
     border-radius: 20px;
 }
 
+.dlt-btn {
+    background-color: var(--red);
+}
+
+.dlt-btn:hover {
+    cursor: pointer;
+    background-color: rgb(255, 103, 103)
+}
+
 /* form */
 .form-card {
     margin-top: 5vh;
@@ -114,9 +122,4 @@ tr:hover td,th{
     min-width: 200px;
     width: 30%;
     flex-direction: column;
-}
-
-.selected {
-    background-color: brown;
-    color: #FFF;
 }
