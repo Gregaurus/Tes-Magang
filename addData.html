@@ -5,15 +5,63 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HomePage</title>
+    <title>Add Data</title>
     <link rel="stylesheet" href="style.css">
     <script src="js/script.js" defer></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
     <div class="wrapper">
         <div class="content">
-
+            <div class="top-content">
+                <h1>Add Data</h1>
+                <hr>
+            </div>
+            <div class="form-card">
+                <form action="data-manage.html" name="add-data-form" id="form" onsubmit="return addData()">
+                    <div class="id card">
+                        <label for="id">ID</label>
+                        <input type="text" name="id" id="form-id" placeholder="Tulis ID">
+                    </div>
+                    <div class="product-id card">
+                        <label for="product-id">Product ID</label>
+                        <input type="text" name="product-id" id="form-product-id" placeholder="Tulis ID produk">
+                    </div>
+                    <div class="product-name card">
+                        <label for="product-name">Product Name</label>
+                        <input type="text" name="product-name" id="form-product-name" placeholder="Tulis nama produk">
+                    </div>
+                    <div class="amount card">
+                        <label for="amount">Amount</label>
+                        <input type="number" name="amount" id="form-amount" placeholder="Tulis jumlah">
+                    </div>
+                    <div class="customer-name card">
+                        <label for="customer-name">Customer Name</label>
+                        <input type="text" name="customer-name" id="form-customer-name" placeholder="Tulis nama customer">
+                    </div>
+                    <div class="status card">
+                        <label for="status">Status</label>
+                        <input type="number" name="status" id="form-status" min="0" max="1" placeholder="0">
+                    </div>
+                    <div class="transaction-date card">
+                        <label for="transaction-date">Transaction Date</label>
+                        <input type="datetime-local" name="transaction-date" id="form-transaction-date" placeholder="">
+                    </div>
+                    <div class="create-by card">
+                        <label for="create-by">Create By</label>
+                        <input type="text" name="create-by" id="form-create-by" placeholder="Tulis nama pembuat">
+                    </div>
+                    <div class="create-on card">
+                        <label for="create-on">Create On</label>
+                        <input type="datetime-local" name="create-on" id="form-create-on" placeholder="">
+                    </div>
+                    <div id="error"></div>
+                    <div class="add">
+                        <button class="btn" type="button" id="btn-add">ADD DATA</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </body>

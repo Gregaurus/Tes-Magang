@@ -1,6 +1,8 @@
 * {
     margin: 0;
-    padding: 1vmin;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* color palette */
@@ -13,9 +15,16 @@
     --red: #DB2955;
 }
 
+.body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: var(--bluePurple);
+}
+
 .wrapper {
+    margin-top: 5vh;
     position: relative;
-    width: 100%;
+    /* width: 100%; */
     text-align: center;
 }
 
@@ -77,4 +86,25 @@ tr:hover td,th{
 
 .button {
     margin : 2vh 0;
+}
+
+.add {
+    margin: 2vh 0;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+/* form */
+.form-card {
+    margin-top: 5vh;
+}
+
+.card {
+    margin: auto;
+    display: flex;
+    min-width: 200px;
+    width: 30%;
+    flex-direction: column;
 }

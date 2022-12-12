@@ -219,3 +219,38 @@ document.querySelectorAll(".table-sortable th").forEach(headerCell => {
         sortTable(tableElement, headerIndex, !currentIsAscending);
     })
 })
+
+// add Data
+
+// function itemUpdate() {
+//     if($("#form-id").val() != null && $("#form-id").val() != '') {
+//         // add item
+//         itemAddToTable();
+
+//         formClear();
+
+//         $("#form-id").focus();
+//     }
+// }
+
+// function itemAddToTable() {
+//     if($("#table-data tbody").length == 0) {
+//         $("#table-data").append("<tbody></tbody>");
+//     }
+
+//     $("#table-data tbody").append("<tr>" +
+//     "<td>" + $("#form-id").val() + "</td>" + 
+//     "<td>" + $("#form-product-id").val() + "</td>" + 
+//     "<td>" + $("#form-product-name").val() + "</td>" + 
+//     "<td>" + $("#form-amount").val() + "</td>" + 
+//     "<td>" + $("#form-customer-name").val() + "</td>" + 
+//     "<td>" + $("#form-status").val() + "</td>" + 
+//     "<td>" + $("#form-transaction-date").val() + "</td>" + 
+//     "<td>" + $("#form-create-by").val() + "</td>" + 
+//     "<td>" + $("#form-create-on").val() + "</td>" + "</tr>"
+//     );
+// }
+
+function addData() {
+    const form = document.forms["add-data-form"];
+}
